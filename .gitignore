@@ -1,0 +1,14 @@
+*.pyc
+__pycache__/
+*.log
+*.pot
+*.mo
+*.swp
+.idea/
+venv/
+env/
+ENV/
+*.sqlite3
+staticfiles/
+media/
+conf.ini
