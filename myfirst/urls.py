@@ -1,9 +1,9 @@
 
-from django.contrib import admin
 from django.urls import path, include
+from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('web_app/', include('web_app.urls')),
+    path('', include('myfirst.apps.web_app.urls')),
 
 ]

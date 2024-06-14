@@ -2,8 +2,6 @@
 import configparser
 from pathlib import Path
 import os, sys
-from configparser import ConfigParser
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,7 +45,7 @@ ROOT_URLCONF = 'myfirst.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'myfirst', 'apps', 'web_app', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,7 +102,10 @@ USE_TZ = True
 
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'myfirst', 'apps', 'web_app', 'templates', 'static'),
+]
 
 
 
