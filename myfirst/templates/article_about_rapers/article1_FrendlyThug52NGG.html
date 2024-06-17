@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>Статьи реперов</title>
+    <title>Title</title>
 </head>
 <body>
-    <header class="main_header">
-        <img class="logo" src="static/documento-r-1024x1024.png" width="75" height="75">
-        <nav class="navigation">
-            <button class="button_in_navigatoin" onclick="location.href='#stat1_id'">Статья 1</button>
-        </nav>
-    </header>
-
+<div class="stat1" id="stat1_id">
     <div class="first_element" id="first_element" align="center">
-        <h1 class="name_in_first" >Реперы</h1> <br>
+        <h1 class="name_in_first">Реперы</h1> <br>
         <hr class="hr1">
     </div>
-
-    <div class="stat1" id="stat1_id">
         <center><h1>Статья 1 - FRIENDLY THUG 52 NGG </h1></center>
         <div class="text" text-align="Times New Roman Italic" >
             <h2 id="tableofcontents_bio">Биография</h2>
@@ -35,9 +28,9 @@
                 С тех пор Александр захотел и своим слушателям дать почувствовать, что они не одни.
             </p>
 
-            <img class="logo" src="static/XEA725vFdys.jpg" alt="" width="500" height="500">
+            <img class="logo" src="{% static 'pic/XEA725vFdys.jpg' %}" alt="" width="500" height="500">
 
-           <h2 id="tableofcontents2">Музыкальная карьера Friendly Thug 52 Ngg</h2>
+            <h2 id="tableofcontents2">Музыкальная карьера Friendly Thug 52 Ngg</h2>
             <p>
                 Музыкальный путь Александр начинал под псевдонимом Vernalcry, под которым в 2017 году выкладывал в Сеть свои первые треки.
                 В них можно было услышать отголоски Dead Dynasty и Pharaoh, но с возрастом музыкант все увереннее обретал собственное звучание и стиль.
@@ -48,7 +41,7 @@
                 полнейшем нежелании что-то из себя изображать.
             </p>
 
-                <img class="logo" src="static/maxresdefault.jpg" alt="" width="700" height="500">
+            <img class="logo" src="{% static 'pic/maxresdefault.jpg' %}" alt="" width="700" height="500">
             <p>
                 «Я читаю рэп, мне не надо врать им», — говорил исполнитель в своих песнях, превращая их в своеобразный сторителлинг о собственной жизни.
                 Криминальное прошлое, личная жизнь, финансовые достижения и насущные проблемы — все это проговаривается монотонным,
@@ -64,9 +57,7 @@
                 однако для него по-прежнему самыми близкими единомышленниками оставались друзья из объединения «52» — Alblak 52,
                 MyDee 52, Glocki 52 и Saint Prince 52, которых музыкант называет своей бандой.
             </p>
-
         </div>
     </div>
-
 </body>
 </html>

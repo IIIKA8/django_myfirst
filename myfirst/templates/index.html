@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Статьи реперов</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container_main" id="container_main_id">
+        <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4"> <img class="logo" src="{% static 'pic/doc.png' %}" width="50" height="50"> </span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" data-article="article1_FrendlyThug52NGG">Статьи о реперах</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-article="article2_UNKI">Статьи о певцах</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-article="article3_Rocket">Интересное</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-article="article4_BushidoJo">Вопросы и ответы</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-article="article_main">О нас</a></li>
+            </ul>
+        </header>
+    </div>
+
+
+
+    <div id="content" class="container">
+        {% include 'article_about_rapers/article1_FrendlyThug52NGG.html' %}
+    </div>
+
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+    </ul>
+  </footer>
+
+
+    <script>
+        $(document).ready(function() {
+            $('a[data-article]').on('click', function(e) {
+                e.preventDefault();
+                var article = $(this).data('article');
+
+                // Удаляем aria-current="page" у всех ссылок
+                $('a[data-article]').removeClass('active').removeAttr('aria-current');
+
+                // Добавляем aria-current="page" к текущей ссылке
+                $(this).addClass('active').attr('aria-current', 'page');
+
+                $.ajax({
+                    url: '/get_article/' + article + '/',
+                    method: 'GET',
+                    success: function(data) {
+                        $('#content').html(data); // Обновляем содержимое #content новыми данными
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Ошибка загрузки статьи:', error);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
