@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
 <div class="stat1" id="stat1_id">
     <div class="first_element" id="first_element" align="center">
         <h1 class="name_in_first">Реперы</h1> <br>
@@ -28,7 +24,7 @@
                 С тех пор Александр захотел и своим слушателям дать почувствовать, что они не одни.
             </p>
 
-            <img class="logo" src="{% static 'pic/XEA725vFdys.jpg' %}" alt="" width="500" height="500">
+            <img class="logo" src="{% static 'pic/52NGG1.jpg' %}" alt="" width="500" height="500">
 
             <h2 id="tableofcontents2">Музыкальная карьера Friendly Thug 52 Ngg</h2>
             <p>
@@ -41,7 +37,7 @@
                 полнейшем нежелании что-то из себя изображать.
             </p>
 
-            <img class="logo" src="{% static 'pic/maxresdefault.jpg' %}" alt="" width="700" height="500">
+            <img class="logo" src="{% static 'pic/52NGG2.jpg' %}" alt="" width="700" height="500">
             <p>
                 «Я читаю рэп, мне не надо врать им», — говорил исполнитель в своих песнях, превращая их в своеобразный сторителлинг о собственной жизни.
                 Криминальное прошлое, личная жизнь, финансовые достижения и насущные проблемы — все это проговаривается монотонным,
@@ -59,5 +55,5 @@
             </p>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
+

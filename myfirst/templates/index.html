@@ -6,7 +6,6 @@
     <title>Статьи реперов</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container_main" id="container_main_id">
@@ -17,19 +16,20 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" data-article="article1_FrendlyThug52NGG">Статьи о реперах</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" data-article="article2_UNKI">Статьи о певцах</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" data-article="article3_Rocket">Интересное</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" data-article="article4_BushidoJo">Вопросы и ответы</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" data-article="article_main">О нас</a></li>
+                <li class="nav-item"><a href="/article1_FrendlyThug52NGG" class="nav-link active" >Статьи о реперах</a></li>
+                <li class="nav-item"><a href="/article2_UNKI" class="nav-link" >Статьи о певцах</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" >Интересное</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" >Вопросы и ответы</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" >О нас</a></li>
             </ul>
         </header>
     </div>
 
 
 
-    <div id="content" class="container">
-        {% include 'article_about_rapers/article1_FrendlyThug52NGG.html' %}
+     <div id="content" class="container">
+        {% block content %}
+        {% endblock %}
     </div>
 
 
@@ -48,32 +48,6 @@
     </ul>
   </footer>
 
-
-    <script>
-        $(document).ready(function() {
-            $('a[data-article]').on('click', function(e) {
-                e.preventDefault();
-                var article = $(this).data('article');
-
-                // Удаляем aria-current="page" у всех ссылок
-                $('a[data-article]').removeClass('active').removeAttr('aria-current');
-
-                // Добавляем aria-current="page" к текущей ссылке
-                $(this).addClass('active').attr('aria-current', 'page');
-
-                $.ajax({
-                    url: '/get_article/' + article + '/',
-                    method: 'GET',
-                    success: function(data) {
-                        $('#content').html(data); // Обновляем содержимое #content новыми данными
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Ошибка загрузки статьи:', error);
-                    }
-                });
-            });
-        });
-    </script>
 
 
 </body>

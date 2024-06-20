@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
-CONFIG_PATH = 'D:/proect_py/Stepik/myfirst/myfirst/apps/conf.ini'
+CONFIG_PATH = 'D:\proect_py\Stepik\myfirst\conf.ini'
 CONFIG_FILE = configparser.ConfigParser()
 CONFIG_FILE.read(CONFIG_PATH)
 SECRET_KEY = CONFIG_FILE.get('Django', 'key')

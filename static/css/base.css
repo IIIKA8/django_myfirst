@@ -33,4 +33,33 @@
   outline: 0;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    flex: 0;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.btn-primary {
+    align-self: flex-end;
+}
+
 

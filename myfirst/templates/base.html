@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="mt-5">Добро пожаловать на сайт WorlDArticlE!</h1>
+            <p class="lead">Здесь вы найдете биографии и информацию о самых известных рэперах, певцах, артистах и не только.</p>
+        </div>
+    </div>
+
+     <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'pic/XEA725vFdys.jpg' %}" class="card-img-top" alt="Friendly Thug 52 Ngg">
+                <div class="card-body">
+                    <h5 class="card-title">Статья 1 - FRIENDLY THUG 52 NGG</h5>
+                    <p class="card-text">Friendly Thug 52 Ngg метит в то, чтобы стать новой иконой андеграунд-рэпа...</p>
+                    <a href="{% url 'article1' %}" class="btn btn-primary">Читать дальше</a>
+                </div>
+            </div>
+        </div>
+
+      <div class="col-md-4">
+          <div class="card">
+              <img src="{% static 'pic/baskov1.png' %}" class="card-img-top" alt="Baskov">
+              <div class="card-body">
+                  <h5 class="card-title">Статья 2 - Николай Викторович Басков</h5>
+                  <p class="card-text">Николай Викторович Басков — эстрадный и оперный певец, композитор, актёр, педагог, народный артист России.</p>
+                  <a href="{% url 'article2' %}" class="btn btn-primary">Читать дальше</a>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
