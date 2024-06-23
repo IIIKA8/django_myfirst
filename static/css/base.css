@@ -39,6 +39,13 @@
     height: 100%;
 }
 
+.central-button-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-img-top {
     height: 200px;
     object-fit: cover;
@@ -57,6 +64,7 @@
 .card-text {
     flex: 1;
 }
+
 
 .btn-primary {
     align-self: flex-end;
